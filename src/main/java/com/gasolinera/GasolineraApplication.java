@@ -16,5 +16,4 @@ public class GasolineraApplication {
         Thread servicio = new Thread(gasolinera);
         servicio.start();
     }
-
 }

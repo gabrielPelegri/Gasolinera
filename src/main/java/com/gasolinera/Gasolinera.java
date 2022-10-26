@@ -1,9 +1,6 @@
 package com.gasolinera;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -18,7 +15,7 @@ public class Gasolinera implements Runnable {
         }
 
         this.surtidores = new ArrayList<>(4);
-        this.coches = new ArrayList<>();
+        this.coches = new LinkedList<>();
         this.times = new Random().longs(5000, 10000).iterator();
 
 
@@ -41,8 +38,6 @@ public class Gasolinera implements Runnable {
         }
         return null;
     }
-
-
 
     public synchronized long getTime() {
         return times.next();
